@@ -1,7 +1,7 @@
 import axios from "axios";
 //Base URL
 const base_url = "https://api.rawg.io/api/";
-const api = process.env.REACT_APP_RAWG_API;
+const api = 'ac0fc25d9cb343c5852d6099b77fee20';
 
 //Geting the dates
 const getCurrentMonth = () => {
@@ -38,3 +38,8 @@ const new_games = `games?key=${api}&dates=${lastYear},${currentDate}&ordering=-r
 export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${new_games}`;
+
+//GAME DETAILS
+export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${api}`
+//Game Screenshots
+export const gameScreenshotsURL = (game_id) => `${base_url}games/${game_id}/screenshots?key=${api}`

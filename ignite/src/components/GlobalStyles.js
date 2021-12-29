@@ -12,7 +12,10 @@ html{
        width: 0.5rem; 
     }
     $::-webkit-scrollbar-thumb{
-        background-color: dark grey;
+        background-color: darkgrey;
+    }
+    &::-webkit-scrollbar-track{
+        background:white;
     }
     body{
         font-family: 'Montserrat', sans-serif;
