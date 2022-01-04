@@ -1,4 +1,4 @@
-import axios from "axios";
+
 //Base URL
 const base_url = "https://api.rawg.io/api/";
 const api = 'ac0fc25d9cb343c5852d6099b77fee20';
@@ -44,4 +44,4 @@ export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${ap
 //Game Screenshots
 export const gameScreenshotsURL = (game_id) => `${base_url}games/${game_id}/screenshots?key=${api}`
 //Searched game
-export const searchGameURL = (game_name) => `${base_url}games?key=${api}&search=${game_name}&page_size=12&`
+export const searchGameURL = (game_name) => `${base_url}games?key=${api}&search=${game_name}&page_size=12`

@@ -6,6 +6,7 @@ import logo from "../img/logo.svg";
 //Redux and routes
 import {fetchSearch} from "../actions/gamesActions";
 import {useDispatch} from 'react-redux';
+import {fadeIn} from '../animations'
 
 
 const Nav = () => {
@@ -19,16 +20,20 @@ const Nav = () => {
     const submitSearch = (e) => {
         e.preventDefault();
         dispatch(fetchSearch(textInput))
+        setTextInput('')
+    }
+    const clearSearched = () => {
+        dispatch({type: 'CLEAR_SEARCHED'})
     }
     return (
-        <StyledNav>
-            <Logo>
+        <StyledNav variants={fadeIn} initial='hidden' animate="show">
+            <Logo onClick={clearSearched}>
                 <img src={logo} alt="logo"/>
                 <h1>Ignite</h1>
-            </Logo>
+            </Logo >
             <form className="search">
                 <input value={textInput} onChange={inputHandler} type="text"/>
-                <button onSubmit={submitSearch} type="submit">Search</button>
+                <button onClick={submitSearch} type="submit">Search</button>
             </form>
         </StyledNav>
     )
